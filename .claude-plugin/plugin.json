@@ -11,7 +11,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "case \"$(uname -s)\" in MINGW*|MSYS*|CYGWIN*) powershell -NoProfile -File \"${CLAUDE_PLUGIN_ROOT}/hooks/unity-relay-stop.ps1\" ;; *) bash \"${CLAUDE_PLUGIN_ROOT}/hooks/unity-relay-stop.sh\" ;; esac",
+            "command": "case \"$(uname -s)\" in MINGW*|MSYS*|CYGWIN*) s=\"${CLAUDE_PLUGIN_ROOT}/hooks/unity-relay-stop.ps1\"; r=\"powershell -NoProfile -File\" ;; *) s=\"${CLAUDE_PLUGIN_ROOT}/hooks/unity-relay-stop.sh\"; r=\"bash\" ;; esac; if [ -f \"$s\" ]; then $r \"$s\"; else echo \"unity-mcp-slots: hook script not found at $s - slot not released\" >&2; fi",
             "timeout": 15,
             "statusMessage": "Releasing Unity MCP slot"
           }
@@ -23,7 +23,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "case \"$(uname -s)\" in MINGW*|MSYS*|CYGWIN*) powershell -NoProfile -File \"${CLAUDE_PLUGIN_ROOT}/hooks/unity-relay-stop.ps1\" ;; *) bash \"${CLAUDE_PLUGIN_ROOT}/hooks/unity-relay-stop.sh\" ;; esac",
+            "command": "case \"$(uname -s)\" in MINGW*|MSYS*|CYGWIN*) s=\"${CLAUDE_PLUGIN_ROOT}/hooks/unity-relay-stop.ps1\"; r=\"powershell -NoProfile -File\" ;; *) s=\"${CLAUDE_PLUGIN_ROOT}/hooks/unity-relay-stop.sh\"; r=\"bash\" ;; esac; if [ -f \"$s\" ]; then $r \"$s\"; else echo \"unity-mcp-slots: hook script not found at $s - slot not released\" >&2; fi",
             "timeout": 15,
             "statusMessage": "Releasing Unity MCP slot"
           }
