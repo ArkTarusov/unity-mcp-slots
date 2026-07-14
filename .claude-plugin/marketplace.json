@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "unity-mcp-slots",
+  "description": "Frees Unity MCP connection slots that idle Claude Code sessions would otherwise hold.",
+  "owner": {
+    "name": "Ark Tarusov",
+    "url": "https://github.com/ArkTarusov"
+  },
+  "plugins": [
+    {
+      "name": "unity-mcp-slots",
+      "description": "Releases the Unity MCP connection slot as soon as a Claude Code session stops using the Editor.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
